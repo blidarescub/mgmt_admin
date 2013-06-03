@@ -1,5 +1,4 @@
 import hashlib
-import random
 import string
 from flask import Flask, request, render_template
 app = Flask(__name__)
