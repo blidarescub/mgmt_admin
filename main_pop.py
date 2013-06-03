@@ -18,7 +18,7 @@ def puppet_kick():
     searchword = request.args.get('key')
     
     if searchword == hash:
-        return "Puppet kick!!!"     
+        return "Puppet kick!!!"
     else:
         return "Incorrect or missing API key :("
 
