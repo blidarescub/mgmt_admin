@@ -2,7 +2,7 @@ import hashlib
 import string
 from flask import Flask, request, render_template, abort
 app = Flask(__name__)
-app.debug = False
+app.debug = True
 
 hash = hashlib.md5().hexdigest()
 print "Current hash : " + hash
