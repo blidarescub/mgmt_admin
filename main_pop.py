@@ -21,6 +21,7 @@ def puppet_kick():
     
     if searchword == hash:
         execute = subprocess.Popen(shlex.split('puppet agent --test'),stdout=subprocess.PIPE)
+        execute.communicate()
         for line in execute.stdout:
             print line
             
@@ -28,9 +29,9 @@ def puppet_kick():
     else:
         return "Incorrect or missing API key :("
 
-@app.errorhandler(404)
-def page_not_found(error):
-    abort(404)
+#@app.errorhandler(404)
+#def page_not_found(error):
+#    abort(404)
 
 
 app.run(host='0.0.0.0')
