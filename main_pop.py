@@ -22,9 +22,7 @@ def puppet_kick():
     if searchword == hash:
         execute = subprocess.Popen(shlex.split('puppet agent --test'),stdout=subprocess.PIPE)
         execute.communicate()
-        for line in execute.stdout:
-            print line
-            
+        
         return "Puppet kick!!!"
     else:
         return "Incorrect or missing API key :("
