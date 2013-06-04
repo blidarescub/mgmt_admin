@@ -1,6 +1,6 @@
 import hashlib
 import string
-from flask import Flask, request, render_template
+from Flask import Flask, request, render_template
 app = Flask(__name__)
 app.debug = True
 
