@@ -1,6 +1,6 @@
 import hashlib
 import string
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, abort
 app = Flask(__name__)
 app.debug = True
 
@@ -22,9 +22,9 @@ def puppet_kick():
     else:
         return "Incorrect or missing API key :("
 
-#@app.errorhandler(404)
-#def page_not_found(error):
-#    return render_template('page_not_found.html'), 404
+@app.errorhandler(404)
+def page_not_found(error):
+    abort(404)
 
 
 app.run(host='0.0.0.0')
