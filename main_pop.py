@@ -1,6 +1,8 @@
 import hashlib
 import string
 from flask import Flask, request, render_template, abort
+import shlex, subprocess
+
 app = Flask(__name__)
 app.debug = True
 
@@ -18,6 +20,10 @@ def puppet_kick():
     searchword = request.args.get('key')
     
     if searchword == hash:
+        execute = subprocess.Popen(shlex.split('puppet agent --test'),stdout=subprocess.PIPE)
+        for line in execute.stdout:
+            print line
+            
         return "Puppet kick!!!"
     else:
         return "Incorrect or missing API key :("
