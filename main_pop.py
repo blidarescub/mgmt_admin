@@ -20,7 +20,7 @@ def puppet_kick():
     searchword = request.args.get('key')
     
     if searchword == hash:
-        execute = subprocess.Popen(shlex.split('puppet agent --test'),stdout=subprocess.PIPE)
+        execute = subprocess.Popen(shlex.split('puppet agent --test'),shell=True,stdout=subprocess.STDOUT)
         execute.communicate()
         
         return "Puppet kick!!!"
