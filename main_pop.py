@@ -1,10 +1,10 @@
-import hashlib
+#import hashlib
 import string
 from Flask import Flask, request, render_template
 app = Flask(__name__)
 app.debug = True
 
-hash = hashlib.md5().hexdigest()
+hash = "asdgfsdfhwrtg21ef341f"#hashlib.md5().hexdigest()
 print "Current hash : " + hash
 
 
