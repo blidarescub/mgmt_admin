@@ -25,7 +25,7 @@ def puppet_kick():
 
         (stdout, stderr) = task.communicate()
         print stdout
-        return "Good job!! :) you kicked the puppet"
+        return stdout
     else:
         return "Incorrect or missing API key :("
 
