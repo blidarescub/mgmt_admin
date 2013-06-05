@@ -2,6 +2,7 @@ import hashlib
 import string
 from flask import Flask, request, render_template, abort
 import shlex, subprocess
+import sys
 
 app = Flask(__name__)
 app.debug = True
